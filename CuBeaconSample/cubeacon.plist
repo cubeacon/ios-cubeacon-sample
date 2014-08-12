@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CB_ID</key>
+	<string>Your CB_ID here</string>
+	<key>CB_KEY</key>
+	<string>Your CB_KEY here</string>
+	<key>KII_APP_ID</key>
+	<string>Your KII_APP_ID here</string>
+	<key>KII_APP_KEY</key>
+	<string>Your KII_APP_KEY here</string>
+	<key>KII_SITE</key>
+	<string>US</string>
+	<key>CB_SHOW_BG_ALERT</key>
+	<true/>
+	<key>CB_SHOW_FG_ALERT</key>
+	<true/>
+	<key>CB_SHOW_ALERT_ON_ENTER</key>
+	<true/>
+	<key>CB_SHOW_ALERT_ON_EXIT</key>
+	<true/>
+	<key>CB_DEFAULT_ALERT_TITLE</key>
+	<string>Found Beacon</string>
+	<key>CB_DEFAULT_ALERT_MSG</key>
+	<string>You have #event in a Beacon : #beacon_name</string>
+</dict>
+</plist>

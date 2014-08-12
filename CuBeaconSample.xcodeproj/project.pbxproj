@@ -1,0 +1,515 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D5358BF41999426600F8CD89 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5358BF31999426600F8CD89 /* Foundation.framework */; };
+		D5358BF61999426600F8CD89 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5358BF51999426600F8CD89 /* CoreGraphics.framework */; };
+		D5358BF81999426600F8CD89 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5358BF71999426600F8CD89 /* UIKit.framework */; };
+		D5358BFE1999426600F8CD89 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5358BFC1999426600F8CD89 /* InfoPlist.strings */; };
+		D5358C001999426600F8CD89 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D5358BFF1999426600F8CD89 /* main.m */; };
+		D5358C041999426600F8CD89 /* CBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5358C031999426600F8CD89 /* CBAppDelegate.m */; };
+		D5358C071999426600F8CD89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5358C051999426600F8CD89 /* Main.storyboard */; };
+		D5358C0A1999426600F8CD89 /* CBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5358C091999426600F8CD89 /* CBViewController.m */; };
+		D5358C0C1999426600F8CD89 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5358C0B1999426600F8CD89 /* Images.xcassets */; };
+		D5358C131999426600F8CD89 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5358C121999426600F8CD89 /* XCTest.framework */; };
+		D5358C141999426600F8CD89 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5358BF31999426600F8CD89 /* Foundation.framework */; };
+		D5358C151999426600F8CD89 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5358BF71999426600F8CD89 /* UIKit.framework */; };
+		D5358C1D1999426600F8CD89 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5358C1B1999426600F8CD89 /* InfoPlist.strings */; };
+		D5358C1F1999426600F8CD89 /* CuBeaconSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5358C1E1999426600F8CD89 /* CuBeaconSampleTests.m */; };
+		D5358C2D199942EB00F8CD89 /* cubeacon.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5358C2C199942EB00F8CD89 /* cubeacon.plist */; };
+		D5358C31199943FF00F8CD89 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D5358C30199943FF00F8CD89 /* libsqlite3.0.dylib */; };
+		D5358C39199953FE00F8CD89 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5358C38199953FE00F8CD89 /* CoreLocation.framework */; };
+		D5DEA40F1999C90B00916418 /* CBKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DEA40E1999C90B00916418 /* CBKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D5358C161999426600F8CD89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5358BE81999426600F8CD89 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5358BEF1999426600F8CD89;
+			remoteInfo = CuBeaconSample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D5358BF01999426600F8CD89 /* CuBeaconSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CuBeaconSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5358BF31999426600F8CD89 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D5358BF51999426600F8CD89 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D5358BF71999426600F8CD89 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D5358BFB1999426600F8CD89 /* CuBeaconSample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CuBeaconSample-Info.plist"; sourceTree = "<group>"; };
+		D5358BFD1999426600F8CD89 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D5358BFF1999426600F8CD89 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D5358C011999426600F8CD89 /* CuBeaconSample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CuBeaconSample-Prefix.pch"; sourceTree = "<group>"; };
+		D5358C021999426600F8CD89 /* CBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBAppDelegate.h; sourceTree = "<group>"; };
+		D5358C031999426600F8CD89 /* CBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBAppDelegate.m; sourceTree = "<group>"; };
+		D5358C061999426600F8CD89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D5358C081999426600F8CD89 /* CBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBViewController.h; sourceTree = "<group>"; };
+		D5358C091999426600F8CD89 /* CBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBViewController.m; sourceTree = "<group>"; };
+		D5358C0B1999426600F8CD89 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D5358C111999426600F8CD89 /* CuBeaconSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CuBeaconSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5358C121999426600F8CD89 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D5358C1A1999426600F8CD89 /* CuBeaconSampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CuBeaconSampleTests-Info.plist"; sourceTree = "<group>"; };
+		D5358C1C1999426600F8CD89 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D5358C1E1999426600F8CD89 /* CuBeaconSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CuBeaconSampleTests.m; sourceTree = "<group>"; };
+		D5358C2C199942EB00F8CD89 /* cubeacon.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cubeacon.plist; sourceTree = "<group>"; };
+		D5358C30199943FF00F8CD89 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		D5358C38199953FE00F8CD89 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D5DEA40E1999C90B00916418 /* CBKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CBKit.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D5358BED1999426600F8CD89 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5358C39199953FE00F8CD89 /* CoreLocation.framework in Frameworks */,
+				D5358C31199943FF00F8CD89 /* libsqlite3.0.dylib in Frameworks */,
+				D5DEA40F1999C90B00916418 /* CBKit.framework in Frameworks */,
+				D5358BF61999426600F8CD89 /* CoreGraphics.framework in Frameworks */,
+				D5358BF81999426600F8CD89 /* UIKit.framework in Frameworks */,
+				D5358BF41999426600F8CD89 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5358C0E1999426600F8CD89 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5358C131999426600F8CD89 /* XCTest.framework in Frameworks */,
+				D5358C151999426600F8CD89 /* UIKit.framework in Frameworks */,
+				D5358C141999426600F8CD89 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D5358BE71999426600F8CD89 = {
+			isa = PBXGroup;
+			children = (
+				D5358BF91999426600F8CD89 /* CuBeaconSample */,
+				D5358C181999426600F8CD89 /* CuBeaconSampleTests */,
+				D5358BF21999426600F8CD89 /* Frameworks */,
+				D5358BF11999426600F8CD89 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D5358BF11999426600F8CD89 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D5358BF01999426600F8CD89 /* CuBeaconSample.app */,
+				D5358C111999426600F8CD89 /* CuBeaconSampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D5358BF21999426600F8CD89 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D5DEA40E1999C90B00916418 /* CBKit.framework */,
+				D5358C38199953FE00F8CD89 /* CoreLocation.framework */,
+				D5358C30199943FF00F8CD89 /* libsqlite3.0.dylib */,
+				D5358BF31999426600F8CD89 /* Foundation.framework */,
+				D5358BF51999426600F8CD89 /* CoreGraphics.framework */,
+				D5358BF71999426600F8CD89 /* UIKit.framework */,
+				D5358C121999426600F8CD89 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D5358BF91999426600F8CD89 /* CuBeaconSample */ = {
+			isa = PBXGroup;
+			children = (
+				D5358C2C199942EB00F8CD89 /* cubeacon.plist */,
+				D5358C021999426600F8CD89 /* CBAppDelegate.h */,
+				D5358C031999426600F8CD89 /* CBAppDelegate.m */,
+				D5358C051999426600F8CD89 /* Main.storyboard */,
+				D5358C081999426600F8CD89 /* CBViewController.h */,
+				D5358C091999426600F8CD89 /* CBViewController.m */,
+				D5358C0B1999426600F8CD89 /* Images.xcassets */,
+				D5358BFA1999426600F8CD89 /* Supporting Files */,
+			);
+			path = CuBeaconSample;
+			sourceTree = "<group>";
+		};
+		D5358BFA1999426600F8CD89 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D5358BFB1999426600F8CD89 /* CuBeaconSample-Info.plist */,
+				D5358BFC1999426600F8CD89 /* InfoPlist.strings */,
+				D5358BFF1999426600F8CD89 /* main.m */,
+				D5358C011999426600F8CD89 /* CuBeaconSample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D5358C181999426600F8CD89 /* CuBeaconSampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				D5358C1E1999426600F8CD89 /* CuBeaconSampleTests.m */,
+				D5358C191999426600F8CD89 /* Supporting Files */,
+			);
+			path = CuBeaconSampleTests;
+			sourceTree = "<group>";
+		};
+		D5358C191999426600F8CD89 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D5358C1A1999426600F8CD89 /* CuBeaconSampleTests-Info.plist */,
+				D5358C1B1999426600F8CD89 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D5358BEF1999426600F8CD89 /* CuBeaconSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5358C221999426600F8CD89 /* Build configuration list for PBXNativeTarget "CuBeaconSample" */;
+			buildPhases = (
+				D5358BEC1999426600F8CD89 /* Sources */,
+				D5358BED1999426600F8CD89 /* Frameworks */,
+				D5358BEE1999426600F8CD89 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CuBeaconSample;
+			productName = CuBeaconSample;
+			productReference = D5358BF01999426600F8CD89 /* CuBeaconSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D5358C101999426600F8CD89 /* CuBeaconSampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5358C251999426600F8CD89 /* Build configuration list for PBXNativeTarget "CuBeaconSampleTests" */;
+			buildPhases = (
+				D5358C0D1999426600F8CD89 /* Sources */,
+				D5358C0E1999426600F8CD89 /* Frameworks */,
+				D5358C0F1999426600F8CD89 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5358C171999426600F8CD89 /* PBXTargetDependency */,
+			);
+			name = CuBeaconSampleTests;
+			productName = CuBeaconSampleTests;
+			productReference = D5358C111999426600F8CD89 /* CuBeaconSampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D5358BE81999426600F8CD89 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CB;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Eyro;
+				TargetAttributes = {
+					D5358BEF1999426600F8CD89 = {
+						DevelopmentTeam = UFZ2D5H3W9;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.iOS = {
+								enabled = 0;
+							};
+						};
+					};
+					D5358C101999426600F8CD89 = {
+						TestTargetID = D5358BEF1999426600F8CD89;
+					};
+				};
+			};
+			buildConfigurationList = D5358BEB1999426600F8CD89 /* Build configuration list for PBXProject "CuBeaconSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D5358BE71999426600F8CD89;
+			productRefGroup = D5358BF11999426600F8CD89 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D5358BEF1999426600F8CD89 /* CuBeaconSample */,
+				D5358C101999426600F8CD89 /* CuBeaconSampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D5358BEE1999426600F8CD89 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5358C2D199942EB00F8CD89 /* cubeacon.plist in Resources */,
+				D5358C0C1999426600F8CD89 /* Images.xcassets in Resources */,
+				D5358BFE1999426600F8CD89 /* InfoPlist.strings in Resources */,
+				D5358C071999426600F8CD89 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5358C0F1999426600F8CD89 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5358C1D1999426600F8CD89 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D5358BEC1999426600F8CD89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5358C001999426600F8CD89 /* main.m in Sources */,
+				D5358C041999426600F8CD89 /* CBAppDelegate.m in Sources */,
+				D5358C0A1999426600F8CD89 /* CBViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5358C0D1999426600F8CD89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5358C1F1999426600F8CD89 /* CuBeaconSampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D5358C171999426600F8CD89 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5358BEF1999426600F8CD89 /* CuBeaconSample */;
+			targetProxy = D5358C161999426600F8CD89 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D5358BFC1999426600F8CD89 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5358BFD1999426600F8CD89 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D5358C051999426600F8CD89 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5358C061999426600F8CD89 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D5358C1B1999426600F8CD89 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5358C1C1999426600F8CD89 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D5358C201999426600F8CD89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D5358C211999426600F8CD89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D5358C231999426600F8CD89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CuBeaconSample/CuBeaconSample-Prefix.pch";
+				INFOPLIST_FILE = "CuBeaconSample/CuBeaconSample-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D5358C241999426600F8CD89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CuBeaconSample/CuBeaconSample-Prefix.pch";
+				INFOPLIST_FILE = "CuBeaconSample/CuBeaconSample-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D5358C261999426600F8CD89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CuBeaconSample.app/CuBeaconSample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CuBeaconSample/CuBeaconSample-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CuBeaconSampleTests/CuBeaconSampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		D5358C271999426600F8CD89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CuBeaconSample.app/CuBeaconSample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CuBeaconSample/CuBeaconSample-Prefix.pch";
+				INFOPLIST_FILE = "CuBeaconSampleTests/CuBeaconSampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D5358BEB1999426600F8CD89 /* Build configuration list for PBXProject "CuBeaconSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5358C201999426600F8CD89 /* Debug */,
+				D5358C211999426600F8CD89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5358C221999426600F8CD89 /* Build configuration list for PBXNativeTarget "CuBeaconSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5358C231999426600F8CD89 /* Debug */,
+				D5358C241999426600F8CD89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5358C251999426600F8CD89 /* Build configuration list for PBXNativeTarget "CuBeaconSampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5358C261999426600F8CD89 /* Debug */,
+				D5358C271999426600F8CD89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D5358BE81999426600F8CD89 /* Project object */;
+}
