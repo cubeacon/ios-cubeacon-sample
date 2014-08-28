@@ -22,19 +22,7 @@ Cubeacon SDK for iOS is a library to allow interaction with any iBeacons. The SD
 1. Register to KiiCloud first using this [guide][KiiCloud].
 2. Download the framework and drag in into the 'Frameworks' section in your XCode project.
 3. Ensure the following frameworks and a library exist in your project :
-   - MobileCoreServices.framework
-   - CoreImage.framework
-   - CoreLocation.framework
-   - CoreGraphics.framework
-   - UIKit.framework
-   - QuartzCore.framework
-   - Accounts.framework
-   - Social.framework
-   - Security.framework
-   - ImageIO.framework
    - libsqlite3.dylib
-   - KiiSDK.framework
-   - KiiAnalytics.framework
 4. Extract `CubeaconSDK-iOS-xxx.zip`, drag in `Cubeacon.plist` to Xcode project.
 5. Then drag in `CuBeacon.framework` into the `Frameworks` section in your XCode project.
 6. Add the following code to initialize Cubeacon SDK in your AppDelegate's `application:didFinishLaunchingWithOptions` method :
@@ -48,11 +36,14 @@ Cubeacon SDK for iOS is a library to allow interaction with any iBeacons. The SD
         return YES;
     }
     ```
-7. Don't forget to add the following header to all files that will use Kii SDK :
+7. Don't forget to add the following header to all files that will use Cubeacon SDK :
 
     ```ios
-    #import <KiiSDK/Kii.h>
+    #import <CBKit/CBKit.h>
     ```
+8. Open your project settings and go to the `Capabilities` tab. Setting like this screenshot below :
+
+    ![Add Capabilities](./capabilities.png)
 
 ## Usage and Demos ##
 You can import `Cubeacon SDK Demos` that located in this repo to your XCode project. 
