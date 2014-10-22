@@ -42,5 +42,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>CuBeacon use location service to scan near by beacons</string>
+    
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>CuBeacon use location service to scan near by beacons</string>
 </dict>
 </plist>
