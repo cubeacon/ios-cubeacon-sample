@@ -15,7 +15,8 @@ xcuserdata
 profile
 *.moved-aside
 DerivedData
-CuBeaconSample.xcodeproj/project.xcworkspace/xcuserdata/
+CuBeaconSample.xcodeproj/xcuserdata/*
+CuBeaconSample.xcodeproj/project.xcworkspace/xcuserdata/*
 .idea/
 # Pods - for those of you who use CocoaPods
 Pods
