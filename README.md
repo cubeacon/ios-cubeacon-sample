@@ -89,6 +89,8 @@ Then, on `ViewController` of your apps :
 By improving analytics usage and user engagement, Cubeacon SDK enhanced with `Meta User` module. This module is optional. So if you want to get user informations like `fullname` and `email`, show a form with 2 textinput and you can save into cloud like this :
 
 ```ios
+    #import <CBKit/CBUser.h>
+    
     [[CBUser currentUser] setUserDisplayName:@"User display name" andUserEmail:@"username@email.com"];
     [[CBUser currentUser] saveUserData:^(BOOL success, NSString *errorMessages) {
         if (success) {
