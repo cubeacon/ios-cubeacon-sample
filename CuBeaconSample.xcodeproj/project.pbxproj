@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		448C296B1A77EF31009BC59E /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 448C296A1A77EF31009BC59E /* CoreFoundation.framework */; };
+		44D385AD1A764FD900104149 /* CBKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44D385AC1A764FD900104149 /* CBKit.framework */; };
 		D5358BF41999426600F8CD89 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5358BF31999426600F8CD89 /* Foundation.framework */; };
 		D5358BF61999426600F8CD89 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5358BF51999426600F8CD89 /* CoreGraphics.framework */; };
 		D5358BF81999426600F8CD89 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5358BF71999426600F8CD89 /* UIKit.framework */; };
@@ -19,10 +21,11 @@
 		D5358C2D199942EB00F8CD89 /* cubeacon.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5358C2C199942EB00F8CD89 /* cubeacon.plist */; };
 		D5358C31199943FF00F8CD89 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D5358C30199943FF00F8CD89 /* libsqlite3.0.dylib */; };
 		D5358C39199953FE00F8CD89 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5358C38199953FE00F8CD89 /* CoreLocation.framework */; };
-		D5DEA40F1999C90B00916418 /* CBKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DEA40E1999C90B00916418 /* CBKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		448C296A1A77EF31009BC59E /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		44D385AC1A764FD900104149 /* CBKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CBKit.framework; sourceTree = "<group>"; };
 		D5358BF01999426600F8CD89 /* CuBeaconSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CuBeaconSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5358BF31999426600F8CD89 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D5358BF51999426600F8CD89 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -40,7 +43,6 @@
 		D5358C2C199942EB00F8CD89 /* cubeacon.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cubeacon.plist; sourceTree = "<group>"; };
 		D5358C30199943FF00F8CD89 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		D5358C38199953FE00F8CD89 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		D5DEA40E1999C90B00916418 /* CBKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CBKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,9 +50,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				448C296B1A77EF31009BC59E /* CoreFoundation.framework in Frameworks */,
+				44D385AD1A764FD900104149 /* CBKit.framework in Frameworks */,
 				D5358C39199953FE00F8CD89 /* CoreLocation.framework in Frameworks */,
 				D5358C31199943FF00F8CD89 /* libsqlite3.0.dylib in Frameworks */,
-				D5DEA40F1999C90B00916418 /* CBKit.framework in Frameworks */,
 				D5358BF61999426600F8CD89 /* CoreGraphics.framework in Frameworks */,
 				D5358BF81999426600F8CD89 /* UIKit.framework in Frameworks */,
 				D5358BF41999426600F8CD89 /* Foundation.framework in Frameworks */,
@@ -80,7 +83,8 @@
 		D5358BF21999426600F8CD89 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D5DEA40E1999C90B00916418 /* CBKit.framework */,
+				448C296A1A77EF31009BC59E /* CoreFoundation.framework */,
+				44D385AC1A764FD900104149 /* CBKit.framework */,
 				D5358C38199953FE00F8CD89 /* CoreLocation.framework */,
 				D5358C30199943FF00F8CD89 /* libsqlite3.0.dylib */,
 				D5358BF31999426600F8CD89 /* Foundation.framework */,
@@ -306,7 +310,10 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CuBeaconSample/CuBeaconSample-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "CuBeaconSample/CuBeaconSample-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "arm64 armv7";
@@ -326,7 +333,10 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CuBeaconSample/CuBeaconSample-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "CuBeaconSample/CuBeaconSample-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "arm64 armv7";

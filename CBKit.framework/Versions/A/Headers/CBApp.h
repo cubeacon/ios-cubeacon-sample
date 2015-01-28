@@ -5,7 +5,7 @@
 //  Created by CuBeacon Dev. on 6/21/14.
 //  Copyright (c) 2014 Eyro. All rights reserved.
 //
-
+#define NDEBUG
 #import <Foundation/Foundation.h>
 
 @import CoreLocation;
@@ -39,13 +39,21 @@ typedef void (^BeaconDidEnterBlock) (CBBeacon* beacon);
  */
 typedef void (^BeaconDidExitBlock) (CBBeacon* beacon, NSTimeInterval interval);
 
-/** Callback for cnganing neareast beacon.
+/** Callback for changing neareast beacon.
  */
 typedef void (^BeaconDidChangeNearestBlock) (CBBeacon* old,CBBeacon* current);
 
+/** Callback when no beacon detected.
+ */
+typedef void (^BeaconEmptyBlock) ();
+
+/** Callback for nearest beacon accuracy.
+ */
+typedef void (^BeaconNearestUpdateRange) (double range);
+
 /** Class that handle CuBeacon application.
  */
-@interface CBApp : NSObject<CLLocationManagerDelegate>
+@interface CBApp : NSObject <CLLocationManagerDelegate>
 
 /** Kii Cloud appId
  */
@@ -82,6 +90,14 @@ typedef void (^BeaconDidChangeNearestBlock) (CBBeacon* old,CBBeacon* current);
  */
 @property (nonatomic,copy) BeaconDidChangeNearestBlock didChangeNearestBlock;
 
+/** Empty nearest beacon callback.
+ */
+@property (nonatomic,copy) BeaconEmptyBlock didEmptyBlock;
+
+/** Updated range beacon callback.
+ */
+@property (nonatomic,copy) BeaconNearestUpdateRange didUpdateRange;
+
 /** Notification event type for detected beacons.
  */
 @property (nonatomic,assign) CBNotificationEventType notificationEventType;
@@ -104,4 +120,19 @@ typedef void (^BeaconDidChangeNearestBlock) (CBBeacon* old,CBBeacon* current);
 /** Singleton instance getter.
  */
 +(instancetype) getInstance;
+
+/**Get scanned beacons.
+ @return Array of CBBeacon that is to be scanned by the SDK.
+ */
++(NSArray*) scannedBeacons;
+
+/**Get SDK version String.
+ @return string representation of the sdk version
+ */
++(NSString*) sdkVersion;
+
+/**Get SDK version code.
+ @return integer representation of the sdk version code
+ */
++(NSUInteger) sdkCode;
 @end

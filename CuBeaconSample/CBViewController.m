@@ -7,6 +7,7 @@
 //
 
 #import "CBViewController.h"
+#import <CBKit/CBUser.h>
 
 @interface CBViewController ()
 
@@ -22,13 +23,41 @@
     }];
     
     [[CBApp getInstance] setDidExitBlock:^(CBBeacon* beacon, NSTimeInterval interval){
-        [self.view setBackgroundColor:[UIColor whiteColor]];
-        
+        NSLog(@"Beacon `%@` exited", beacon.name);
     }];
     
     [[CBApp getInstance] setDidChangeNearestBlock:^(CBBeacon* old, CBBeacon* current){
         [self.view setBackgroundColor:current.color];
-        
+        if (current.storyline == kStorylineImage) {
+            // display a brochure image
+        } else if (current.storyline == kStorylineText) {
+            // show text alert/notification
+        } else if (current.storyline == kStorylineHtml) {
+            // show html page via uiwebview
+        } else if (current.storyline == kStorylineUrl) {
+            // open url in a uiwebview/safari browser
+        } else if (current.storyline == kStorylineVideo) {
+            // play a video streaming
+        }
+    }];
+    
+    [[CBApp getInstance] setDidUpdateRange:^(double range){
+        NSLog(@"Range: %lfm", range);
+    }];
+    
+    [[CBApp getInstance] setDidEmptyBlock:^(){
+        [self.view setBackgroundColor:[UIColor whiteColor]];
+    }];
+}
+
+-(void)updateMetaUser{
+    [[CBUser currentUser] setUserDisplayName:@"User display name" andUserEmail:@"username@email.com"];
+    [[CBUser currentUser] saveUserData:^(BOOL success, NSString *errorMessages) {
+        if (success) {
+            NSLog(@"Save meta user succeed...");
+        } else {
+            NSLog(@"Save meta user failed: %@", errorMessages);
+        }
     }];
 }
 

@@ -53,21 +53,57 @@ Then, on `ViewController` of your apps :
     {
         [super viewDidLoad];
         [[CBApp getInstance] setDidEnterBlock:^(CBBeacon* beacon){
-            // do something when beacon entered, ex: change background color
-            [self.view setBackgroundColor:beacon.color];
+            // do something when beacon entered region, ex: change background color
         }];
+        
         [[CBApp getInstance] setDidExitBlock:^(CBBeacon* beacon, NSTimeInterval interval){
-            // do something when beacon exited, ex: change background color
-            [self.view setBackgroundColor:[UIColor whiteColor]];
+            // do something when beacon exited from region, ex: change background color
         }];
+        
         [[CBApp getInstance] setDidChangeNearestBlock:^(CBBeacon* old, CBBeacon* current){
-            // do something when nearest beacon changed, ex: change background color
-            [self.view setBackgroundColor:current.color];
+            // do something when nearest beacon changed
+            if (current.storyline == kStorylineImage) {
+                // display a brochure image
+            } else if (current.storyline == kStorylineText) {
+                // show text alert/notification
+            } else if (current.storyline == kStorylineHtml) {
+                // show html page via uiwebview
+            } else if (current.storyline == kStorylineUrl) {
+                // open url in a uiwebview/safari browser
+            } else if (current.storyline == kStorylineVideo) {
+                // play a video streaming
+            }
+        }];
+        
+        [[CBApp getInstance] setDidUpdateRange:^(double range){
+            // show and update distance of a nearest beacon
+        }];
+        
+        [[CBApp getInstance] setDidEmptyBlock:^(){
+            // do something when no beacon arround detected
         }];
     }
 ```
 
+### Meta Users ###
+By improving analytics usage and user engagement, Cubeacon SDK enhanced with `Meta User` module. This module is optional. So if you want to get user informations like `fullname` and `email`, show a form with 2 textinput and you can save into cloud like this :
+
+```ios
+    [[CBUser currentUser] setUserDisplayName:@"User display name" andUserEmail:@"username@email.com"];
+    [[CBUser currentUser] saveUserData:^(BOOL success, NSString *errorMessages) {
+        if (success) {
+            NSLog(@"Save meta user succeed...");
+        } else {
+            NSLog(@"Save meta user failed: %@", errorMessages);
+        }
+    }];
+```
+
 ## Changelog ##
+* 1.2.0 (January 28, 2015)
+  - Add meta user for analytics
+  - Add storyline for beacon scenario
+  - Comply with current Cubeacon SaaS v1.2.0
 * 1.0.0 (November 10, 2014)
   - Improve stability
   - Comply with current Cubeacon SaaS v1.0.0

@@ -11,6 +11,19 @@
 
 @class CLBeacon;
 
+/**
+ Storyline event type
+ */
+typedef enum {
+    kStorylineText,
+    kStorylineImage,
+    kStorylineVideo,
+    kStorylineHtml,
+    kStorylineUrl
+} kStorylineType;
+
+#define storylineArray @"TEXT", @"IMAGE", @"VIDEO", @"HTML", @"URL", nil
+
 /** Class for iBeacon representation.
  */
 @interface CBBeacon : NSObject
@@ -34,6 +47,11 @@
  The value is defined by scanned beacon.
  */
 @property(nonatomic,readonly) NSInteger minor;
+
+/**
+ The value is defined by the cloud
+ */
+@property(nonatomic,readonly) kStorylineType storyline;
 
 /** CuBeacon Id.
  The value is defined by the cloud.
