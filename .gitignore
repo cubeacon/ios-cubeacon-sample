@@ -20,3 +20,5 @@ CuBeaconSample.xcodeproj/project.xcworkspace/xcuserdata/*
 .idea/
 # Pods - for those of you who use CocoaPods
 Pods
+
+CuBeaconSample/cubeacon-demo.plist

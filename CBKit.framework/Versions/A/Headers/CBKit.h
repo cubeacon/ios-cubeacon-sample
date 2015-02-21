@@ -8,3 +8,6 @@
 
 #import <CBKit/CBApp.h>
 #import <CBKit/CBBeacon.h>
+#import <CBKit/CBUser.h>
+#import <CBKit/CBConstant.h>
+#import <CBKit/CBStoryline.h>

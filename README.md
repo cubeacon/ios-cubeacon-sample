@@ -29,6 +29,11 @@ Cubeacon SDK for iOS is a library to allow interaction with any iBeacons. The SD
     ```ios
     - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     {
+        // enable Cubeacon SDK to show notification
+        UIUserNotificationSettings *setting = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:[NSSet setWithObject:@"BeaconsNotification"]];
+        [application registerUserNotificationSettings:setting];
+    
+        // init Cubeacon SDK with plist file
         NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Cubeacon" ofType:@"plist"];
         [CBApp setupWithPlist:plistPath];
         [[CBApp getInstance] refreshBeacons];
@@ -82,6 +87,43 @@ Then, on `ViewController` of your apps :
         [[CBApp getInstance] setDidEmptyBlock:^(){
             // do something when no beacon arround detected
         }];
+        
+        /* This line block below is activated when using new storyline mode */
+        [[CBApp getInstance] setDidImmediateBlock:^(CBBeacon* beacon){
+        if (beacon.cbStoryline.campaign == CBCampaignTypeImage) {
+            // display a brochure image
+        } else if (beacon.cbStoryline.campaign == CBCampaignTypeHtml) {
+            // show html page via uiwebview
+        } else if (beacon.cbStoryline.campaign == CBCampaignTypeUrl) {
+            // open url in a uiwebview/safari browser
+        } else if (beacon.cbStoryline.campaign == CBCampaignTypeVideo) {
+            // play a video streaming
+        }
+    }];
+    
+    [[CBApp getInstance] setDidNearBlock:^(CBBeacon* beacon){
+        if (beacon.cbStoryline.campaign == CBCampaignTypeImage) {
+            // display a brochure image
+        } else if (beacon.cbStoryline.campaign == CBCampaignTypeHtml) {
+            // show html page via uiwebview
+        } else if (beacon.cbStoryline.campaign == CBCampaignTypeUrl) {
+            // open url in a uiwebview/safari browser
+        } else if (beacon.cbStoryline.campaign == CBCampaignTypeVideo) {
+            // play a video streaming
+        }
+    }];
+    
+    [[CBApp getInstance] setDidFarBlock:^(CBBeacon* beacon){
+        if (beacon.cbStoryline.campaign == CBCampaignTypeImage) {
+            // display a brochure image
+        } else if (beacon.cbStoryline.campaign == CBCampaignTypeHtml) {
+            // show html page via uiwebview
+        } else if (beacon.cbStoryline.campaign == CBCampaignTypeUrl) {
+            // open url in a uiwebview/safari browser
+        } else if (beacon.cbStoryline.campaign == CBCampaignTypeVideo) {
+            // play a video streaming
+        }
+    }];
     }
 ```
 
@@ -102,6 +144,10 @@ By improving analytics usage and user engagement, Cubeacon SDK enhanced with `Me
 ```
 
 ## Changelog ##
+* 1.3.0 (February 21, 2015)
+  - New storyline with custom campaign like showing Image, Video, Url web page and HTML formatted content.
+  - New analytic data based new storyline
+  - Comply with current Cubeacon SaaS v1.3.0
 * 1.2.0 (January 28, 2015)
   - Add meta user for analytics
   - Add storyline for beacon scenario

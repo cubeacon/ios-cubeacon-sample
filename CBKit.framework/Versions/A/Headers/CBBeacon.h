@@ -10,19 +10,7 @@
 #import <UIKit/UIKit.h>
 
 @class CLBeacon;
-
-/**
- Storyline event type
- */
-typedef enum {
-    kStorylineText,
-    kStorylineImage,
-    kStorylineVideo,
-    kStorylineHtml,
-    kStorylineUrl
-} kStorylineType;
-
-#define storylineArray @"TEXT", @"IMAGE", @"VIDEO", @"HTML", @"URL", nil
+@class CBStoryline;
 
 /** Class for iBeacon representation.
  */
@@ -48,11 +36,6 @@ typedef enum {
  */
 @property(nonatomic,readonly) NSInteger minor;
 
-/**
- The value is defined by the cloud
- */
-@property(nonatomic,readonly) kStorylineType storyline;
-
 /** CuBeacon Id.
  The value is defined by the cloud.
  */
@@ -63,23 +46,12 @@ typedef enum {
  */
 @property(nonatomic,readonly) UIColor *color;
 
-/**
- The value is defined by the cloud.
- */
-@property(nonatomic,readonly) UIImage *brochureImage;
-
-/**
- The value is defined by the cloud.
- */
-@property(nonatomic,readonly) NSString *alertMsg;
-
-/**Alert message title.
- The value is defined by the cloud.
- */
-@property (nonatomic, readonly) NSString *alertTitle;
-
 /** Raw CLBeacon instance scanned by iOS.
  */
 @property(nonatomic,readonly) CLBeacon *clBeacon;
+
+/** Raw CBStoryline instance when detected by scanning
+ */
+@property(nonatomic,readonly) CBStoryline *cbStoryline;
 
 @end

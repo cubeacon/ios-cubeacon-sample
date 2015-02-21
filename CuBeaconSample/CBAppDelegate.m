@@ -12,8 +12,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"cubeacon" ofType:@"plist"];
-    
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"cubeacon-demo" ofType:@"plist"];
+    UIUserNotificationSettings *setting = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:[NSSet setWithObject:@"BeaconsNotification"]];
+    [application registerUserNotificationSettings:setting];
     [CBApp setupWithPlist:plistPath];
     [[CBApp getInstance] refreshBeacons];
     return YES;

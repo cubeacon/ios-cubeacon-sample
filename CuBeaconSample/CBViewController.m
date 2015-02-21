@@ -28,15 +28,13 @@
     
     [[CBApp getInstance] setDidChangeNearestBlock:^(CBBeacon* old, CBBeacon* current){
         [self.view setBackgroundColor:current.color];
-        if (current.storyline == kStorylineImage) {
+        if (current.cbStoryline.campaign == CBCampaignTypeImage) {
             // display a brochure image
-        } else if (current.storyline == kStorylineText) {
-            // show text alert/notification
-        } else if (current.storyline == kStorylineHtml) {
+        } else if (current.cbStoryline.campaign == CBCampaignTypeHtml) {
             // show html page via uiwebview
-        } else if (current.storyline == kStorylineUrl) {
+        } else if (current.cbStoryline.campaign == CBCampaignTypeUrl) {
             // open url in a uiwebview/safari browser
-        } else if (current.storyline == kStorylineVideo) {
+        } else if (current.cbStoryline.campaign == CBCampaignTypeVideo) {
             // play a video streaming
         }
     }];
@@ -47,6 +45,42 @@
     
     [[CBApp getInstance] setDidEmptyBlock:^(){
         [self.view setBackgroundColor:[UIColor whiteColor]];
+    }];
+    
+    [[CBApp getInstance] setDidImmediateBlock:^(CBBeacon* beacon){
+        if (beacon.cbStoryline.campaign == CBCampaignTypeImage) {
+            // display a brochure image
+        } else if (beacon.cbStoryline.campaign == CBCampaignTypeHtml) {
+            // show html page via uiwebview
+        } else if (beacon.cbStoryline.campaign == CBCampaignTypeUrl) {
+            // open url in a uiwebview/safari browser
+        } else if (beacon.cbStoryline.campaign == CBCampaignTypeVideo) {
+            // play a video streaming
+        }
+    }];
+    
+    [[CBApp getInstance] setDidNearBlock:^(CBBeacon* beacon){
+        if (beacon.cbStoryline.campaign == CBCampaignTypeImage) {
+            // display a brochure image
+        } else if (beacon.cbStoryline.campaign == CBCampaignTypeHtml) {
+            // show html page via uiwebview
+        } else if (beacon.cbStoryline.campaign == CBCampaignTypeUrl) {
+            // open url in a uiwebview/safari browser
+        } else if (beacon.cbStoryline.campaign == CBCampaignTypeVideo) {
+            // play a video streaming
+        }
+    }];
+    
+    [[CBApp getInstance] setDidFarBlock:^(CBBeacon* beacon){
+        if (beacon.cbStoryline.campaign == CBCampaignTypeImage) {
+            // display a brochure image
+        } else if (beacon.cbStoryline.campaign == CBCampaignTypeHtml) {
+            // show html page via uiwebview
+        } else if (beacon.cbStoryline.campaign == CBCampaignTypeUrl) {
+            // open url in a uiwebview/safari browser
+        } else if (beacon.cbStoryline.campaign == CBCampaignTypeVideo) {
+            // play a video streaming
+        }
     }];
 }
 

@@ -7,29 +7,10 @@
 //
 #define NDEBUG
 #import <Foundation/Foundation.h>
+#import "CBConstant.h"
 
 @import CoreLocation;
 @class CBBeacon;
-
-/** Notification event type.
- */
-typedef NS_OPTIONS(NSUInteger, CBNotificationEventType) {
-    /** The application may not present any Notification upon any beacon event being received */
-    CBNotificationEventTypeNone    = 0,
-    /**  The application display alert notification on entering beacon region. */
-    CBNotificationEventTypeOnEnter   = 1 << 0,
-    /**  The application display alert notification on exiting beacon region. */
-    CBNotificationEventTypeOnExit   = 1 << 1,
-} ;
-
-/** Notification state type.
- */
-typedef NS_OPTIONS(NSUInteger, CBNotificationStateType) {
-    /** The application display alert notification on background state. */
-    CBNotificationStateTypeOnBackground   = 1 << 0,
-    /** Yhe application display alert notification on foreground state. */
-    CBNotificationStateTypeOnForeground   = 1 << 1,
-} ;
 
 /** Callback for entering a beacon.
  */
@@ -43,11 +24,35 @@ typedef void (^BeaconDidExitBlock) (CBBeacon* beacon, NSTimeInterval interval);
  */
 typedef void (^BeaconDidChangeNearestBlock) (CBBeacon* old,CBBeacon* current);
 
+/**
+ *  Callback for detected beacon with proximity Immediate
+ *
+ *  @param beacon Detected beacon
+ */
+typedef void (^BeaconDidImmediateBlock) (CBBeacon* beacon);
+
+/**
+ *  Callback for detected beacon with proximity Near
+ *
+ *  @param beacon Detected beacon
+ */
+typedef void (^BeaconDidNearBlock) (CBBeacon* beacon);
+
+/**
+ *  Callback for detected beacon with proximity Far
+ *
+ *  @param beacon Detected beacon
+ */
+typedef void (^BeaconDidFarBlock) (CBBeacon* beacon);
+
 /** Callback when no beacon detected.
  */
 typedef void (^BeaconEmptyBlock) ();
 
-/** Callback for nearest beacon accuracy.
+/**
+ *  Callback for nearest beacon accuracy.
+ *
+ *  @param range accuracy of nearest detected beacon
  */
 typedef void (^BeaconNearestUpdateRange) (double range);
 
@@ -89,6 +94,21 @@ typedef void (^BeaconNearestUpdateRange) (double range);
 /** Changed nearest beacon callback.
  */
 @property (nonatomic,copy) BeaconDidChangeNearestBlock didChangeNearestBlock;
+
+/**
+ *  Immediate proximity beacon callback
+ */
+@property (nonatomic,copy) BeaconDidImmediateBlock didImmediateBlock;
+
+/**
+ *  Near proximity beacon callback
+ */
+@property (nonatomic,copy) BeaconDidNearBlock didNearBlock;
+
+/**
+ *  Far proximity beacon callback
+ */
+@property (nonatomic,copy) BeaconDidFarBlock didFarBlock;
 
 /** Empty nearest beacon callback.
  */

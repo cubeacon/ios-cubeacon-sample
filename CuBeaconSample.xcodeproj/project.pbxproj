@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		448C296B1A77EF31009BC59E /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 448C296A1A77EF31009BC59E /* CoreFoundation.framework */; };
 		44D385AD1A764FD900104149 /* CBKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44D385AC1A764FD900104149 /* CBKit.framework */; };
+		44FDBC8C1A987E9F00D77B1F /* cubeacon-demo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44FDBC8B1A987E9F00D77B1F /* cubeacon-demo.plist */; };
 		D5358BF41999426600F8CD89 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5358BF31999426600F8CD89 /* Foundation.framework */; };
 		D5358BF61999426600F8CD89 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5358BF51999426600F8CD89 /* CoreGraphics.framework */; };
 		D5358BF81999426600F8CD89 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5358BF71999426600F8CD89 /* UIKit.framework */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		448C296A1A77EF31009BC59E /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		44D385AC1A764FD900104149 /* CBKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CBKit.framework; sourceTree = "<group>"; };
+		44FDBC8B1A987E9F00D77B1F /* cubeacon-demo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "cubeacon-demo.plist"; sourceTree = "<group>"; };
 		D5358BF01999426600F8CD89 /* CuBeaconSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CuBeaconSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5358BF31999426600F8CD89 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D5358BF51999426600F8CD89 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -97,6 +99,7 @@
 		D5358BF91999426600F8CD89 /* CuBeaconSample */ = {
 			isa = PBXGroup;
 			children = (
+				44FDBC8B1A987E9F00D77B1F /* cubeacon-demo.plist */,
 				D5358C2C199942EB00F8CD89 /* cubeacon.plist */,
 				D5358C021999426600F8CD89 /* CBAppDelegate.h */,
 				D5358C031999426600F8CD89 /* CBAppDelegate.m */,
@@ -190,6 +193,7 @@
 				D5358C0C1999426600F8CD89 /* Images.xcassets in Resources */,
 				D5358BFE1999426600F8CD89 /* InfoPlist.strings in Resources */,
 				D5358C071999426600F8CD89 /* Main.storyboard in Resources */,
+				44FDBC8C1A987E9F00D77B1F /* cubeacon-demo.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
