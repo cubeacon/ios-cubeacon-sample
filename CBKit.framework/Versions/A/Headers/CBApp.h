@@ -5,7 +5,7 @@
 //  Created by CuBeacon Dev. on 6/21/14.
 //  Copyright (c) 2014 Eyro. All rights reserved.
 //
-#define NDEBUG
+
 #import <Foundation/Foundation.h>
 #import "CBConstant.h"
 
@@ -140,6 +140,10 @@ typedef void (^BeaconNearestUpdateRange) (double range);
 /** Singleton instance getter.
  */
 +(instancetype) getInstance;
+
+/** Show the debug logging provided by Cubeacon SDK
+ */
++(void) enableDebugLogging;
 
 /**Get scanned beacons.
  @return Array of CBBeacon that is to be scanned by the SDK.

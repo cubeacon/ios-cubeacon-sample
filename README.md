@@ -37,6 +37,9 @@ Cubeacon SDK for iOS is a library to allow interaction with any iBeacons. The SD
         NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Cubeacon" ofType:@"plist"];
         [CBApp setupWithPlist:plistPath];
         [[CBApp getInstance] refreshBeacons];
+        // enable this line below if on development mode
+        [CBApp enableDebugLogging];
+        
         return YES;
     }
     ```
@@ -144,6 +147,9 @@ By improving analytics usage and user engagement, Cubeacon SDK enhanced with `Me
 ```
 
 ## Changelog ##
+* 1.3.1 (March 19, 2015)
+  - Add support `#user` on `UILocalnotification`.
+  - Add method to enable debug logging from Cubeacon SDK
 * 1.3.0 (February 21, 2015)
   - New storyline with custom campaign like showing Image, Video, Url web page and HTML formatted content.
   - New analytic data based new storyline
