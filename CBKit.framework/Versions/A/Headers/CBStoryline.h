@@ -60,6 +60,6 @@
 /**
  *  Storyline show on day by name
  */
-@property (nonatomic, readonly) NSArray *showOn;
+@property (nonatomic, readonly) NSDictionary *showOn;
 
 @end

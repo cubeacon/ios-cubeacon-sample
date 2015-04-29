@@ -7,24 +7,49 @@ Cubeacon SDK for iOS is a library to allow interaction with any iBeacons. The SD
 
 **Cubeacon SDK allows for :**
 
-  - Integrating with Cubeacon SaaS
-  - Scanning any beacons on a foreground UI or on background as a service
-  - Showing alert (foreground) or notifications (background) when any beacons entered region `setDidEnterBlock`, exited region `setDidExitBlock` and nearest detected `setDidChangeNearestBlock`
-  - Showing scenario based on beacons detected
-  - Sending analytic to Cubeacon SaaS
+- Integrating with Cubeacon SaaS
+- Scanning any beacons on a foreground UI or on background as a service
+- Showing alert (foreground) or notifications (background) when any beacons entered region `setDidEnterBlock` and exited region `setDidExitBlock`
+- Showing alert (foreground) when any beacons detected with immediate proximity `setImmediateBlock`, near proximity `setNearBlock` and far proxmity `setFarBlock`
+- Showing scenario based on beacons detected using storylines
+- Sending realtime analytic to Cubeacon SaaS
 
 **Cubeacon Link :**
- - [Cubeacon Software as a Service][CubeaconSaaS]
- - [iOS Apple Documentation][AppleDoc]
- - [Provide us Comments][Issue]
+
+- [Cubeacon Software as a Service][CubeaconSaaS]
+- [iOS Apple Documentation][AppleDoc]
+- [Provide us Comments][Issue]
 
 ## Cubeacon SDK Installation ##
-1. Download the framework and drag in into the 'Frameworks' section in your XCode project.
+1. Download the Cubeacon SDK framework from [Cubeacon Developer][CubeaconSaaS].
 2. Ensure the following frameworks and a library exist in your project :
-   - libsqlite3.dylib
+   - `libsqlite3.0.dylib`
+   - `UIKit.framework`
+   - `Foundation.framework`
+   - `CoreLocation.framework`
+   - `CoreFoundation.framework`
+   - `CoreGraphics.framework`
 3. Extract `CubeaconSDK-iOS-xxx.zip`, drag in `Cubeacon.plist` to Xcode project.
-4. Then drag in `CuBeacon.framework` into the `Frameworks` section in your XCode project.
-5. Add the following code to initialize Cubeacon SDK in your AppDelegate's `application:didFinishLaunchingWithOptions` method :
+4. Then drag in `CBKit.framework` into the `Frameworks` section in your XCode project.
+5. Create a PCH file and add the folowing code :
+
+    ```ios
+    #import <Availability.h>
+
+    #ifndef __IPHONE_5_0
+        #warning "This project uses features only available in iOS SDK 5.0 and later."
+    #endif
+    
+    #ifdef __OBJC__
+        #import <UIKit/UIKit.h>
+        #import <Foundation/Foundation.h>
+        #import <CBKit/CBKit.h>
+    #endif
+    ```
+    Then, don't forget to setting up the PCH file to `Build Settings` below `Apple LLVM 6.1 - Language` :
+    - set `Precompile Prefix Header` to `Yes`
+    - set `Prefix Header` to `<project-name>/<pch-filename.pch>`
+6. Add the following code to initialize Cubeacon SDK in `AppDelegate` `application:didFinishLaunchingWithOptions` method :
 
     ```ios
     - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -32,30 +57,35 @@ Cubeacon SDK for iOS is a library to allow interaction with any iBeacons. The SD
         // enable Cubeacon SDK to show notification
         UIUserNotificationSettings *setting = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:[NSSet setWithObject:@"BeaconsNotification"]];
         [application registerUserNotificationSettings:setting];
-    
+        
         // init Cubeacon SDK with plist file
         NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Cubeacon" ofType:@"plist"];
         [CBApp setupWithPlist:plistPath];
-        [[CBApp getInstance] refreshBeacons];
-        // enable this line below if on development mode
+        
+        // enable this line below to enable Cubeacon SDK Debug Loggin
         [CBApp enableDebugLogging];
+        
+        // download beacon data
+        [[CBApp getInstance] refreshBeacons];
         
         return YES;
     }
     ```
-7. Don't forget to add the following header to all files that will use Cubeacon SDK :
-
-    ```ios
-    #import <CBKit/CBKit.h>
-    ```
-8. Open your project settings and go to the `Capabilities` tab. Setting like this screenshot below :
+7. Open your project settings and go to the `Capabilities` tab. Setting like this screenshot below :
 
     ![Add Capabilities](./capabilities.png)
+8. Add this two lines into `info.plist` file :
+
+| Key                                   | Type   | Value                                                 |
+|---------------------------------------|--------|-------------------------------------------------------|
+| `NSLocationAlwaysUsageDescription`    | String | CuBeacon use location service to scan near by beacons |
+| `NSLocationWhenInUseUsageDescription` | String | CuBeacon use location service to scan near by beacons |
 
 ## Usage and Demos ##
 You can import `Cubeacon SDK Demos` that located in this repo to your XCode project. 
 
 Then, on `ViewController` of your apps :
+
 ```ios
     - (void)viewDidLoad
     {
@@ -134,8 +164,6 @@ Then, on `ViewController` of your apps :
 By improving analytics usage and user engagement, Cubeacon SDK enhanced with `Meta User` module. This module is optional. So if you want to get user informations like `fullname` and `email`, show a form with 2 textinput and you can save into cloud like this :
 
 ```ios
-    #import <CBKit/CBUser.h>
-    
     [[CBUser currentUser] setUserDisplayName:@"User display name" andUserEmail:@"username@email.com"];
     [[CBUser currentUser] saveUserData:^(BOOL success, NSString *errorMessages) {
         if (success) {
@@ -147,6 +175,8 @@ By improving analytics usage and user engagement, Cubeacon SDK enhanced with `Me
 ```
 
 ## Changelog ##
+* 1.3.2 (April, 29, 2015)
+  - Fix optional parameter when downloading data from cloud
 * 1.3.1 (March 19, 2015)
   - Add support `#user` on `UILocalnotification`.
   - Add method to enable debug logging from Cubeacon SDK
