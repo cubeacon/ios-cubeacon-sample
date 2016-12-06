@@ -1,18 +1,16 @@
 //
 //  main.m
-//  CuBeaconSample
+//  CubeaconSample
 //
-//  Created by CuBeacon on 8/12/14.
-//  Copyright (c) 2014 Eyro. All rights reserved.
+//  Created by Eyro Labs on 12/6/16.
+//  Copyright © 2016 Eyro Labs. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
-#import "CBAppDelegate.h"
-
-int main(int argc, char * argv[])
-{
+int main(int argc, char * argv[]) {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([CBAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }
