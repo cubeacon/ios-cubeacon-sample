@@ -53,6 +53,11 @@ Learn more at:
 2. [Monitoring][Monitoring] beacon
 3. Show [notification][Notification]
 
+### Upload to App Store ###
+Having trouble uploading to App Store? Try any of these step :
+1. [Stripping Unwanted Architectures From Dynamic Libraries In Xcode][Stripping Unwanted Architectures From Dynamic Libraries In Xcode] from Daniel Kennet
+2. Replacing `Cubeacon.framework` for Released only binary. [Download here][Cubeacon Release].
+
 ### Changelog ###
 Read about detailed changelog [here][Changelog]
 
@@ -65,3 +70,5 @@ Read about detailed changelog [here][Changelog]
 [Github Release]:https://github.com/cubeacon/ios-cubeacon-sample/releases
 [AppleStore]:https://itunes.apple.com/id/app/cubeacon-tools/id953919362?mt=8
 [AppleDoc]:http://docs.cubeacon.com/sdk/ios/references/index.html
+[Stripping Unwanted Architectures From Dynamic Libraries In Xcode]:http://ikennd.ac/blog/2015/02/stripping-unwanted-architectures-from-dynamic-libraries-in-xcode/
+[Cubeacon Release]:https://github.com/cubeacon/ios-cubeacon-sample/releases/download/v2.0.0/Cubeacon-Relase.framework.zip
